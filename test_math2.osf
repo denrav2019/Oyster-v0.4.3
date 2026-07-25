@@ -1,0 +1,9 @@
+print(frac(3.14))
+print(inv(5))
+print(inv(-3.25))
+
+$x = 10
+inc $x
+print($x)
+dec $x
+print($x)

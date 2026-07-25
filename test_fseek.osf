@@ -1,0 +1,10 @@
+$fh = fopen("test_fseek.txt", "w")
+$x = fprint($fh, "Hello, World!")
+$x = fclose($fh)
+
+$fh2 = fopen("test_fseek.txt", "r")
+$x = fseek($fh2, 7, 0)
+$line = freadline($fh2)
+print($line)
+print(ftell($fh2))
+$x = fclose($fh2)

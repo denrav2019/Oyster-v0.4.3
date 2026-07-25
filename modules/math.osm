@@ -1,0 +1,14 @@
+&PI = 3.14159
+
+
+fun add($a, $b) {
+    return $a + $b
+}
+
+fun mul($a, $b) {
+    return $a * $b
+}
+
+export add
+export mul
+ENDOFFILE

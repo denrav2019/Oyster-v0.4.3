@@ -1,0 +1,7 @@
+# File processor example
+use "io" as io
+
+@content = io.slurp("input.txt")
+@lines = split(@content, "\n")
+$count = len(@lines)
+print("Lines: " . $count)

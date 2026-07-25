@@ -1,0 +1,9 @@
+print("=== Test 8: String functions ===")
+$str = "  Hello World  "
+print(lc($str))
+print(uc($str))
+print(chomp("line\n"))
+print(chop("Oyster!"))
+print(len($str))
+print(ord("A"))
+print(chr(65))

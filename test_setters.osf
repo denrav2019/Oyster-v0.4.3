@@ -1,0 +1,11 @@
+@arr = array(8)
+$x = set8(@arr, 0, 65)
+$x = set8(@arr, 1, 66)
+print(get8(@arr, 0))
+print(get8(@arr, 1))
+
+$x = set16(@arr, 2, 16706)
+print(get16(@arr, 2))
+
+$x = set32(@arr, 4, 1145258561)
+print(get32(@arr, 4))

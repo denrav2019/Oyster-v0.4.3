@@ -1,0 +1,21 @@
+fun add($x, $y) { return $x + $y }
+print(add(10, 20))
+
+fun factorial($n) {
+  if($n <= 1) { return 1 }
+  return $n * factorial($n - 1)
+}
+print(factorial(5))
+
+$x = -42
+print($x.abs())
+
+$s = "Oyster"
+print($s.uc())
+
+$c = postfix{ 5 3 * 2 + }
+print($c)
+
+$a = "Hello, "
+$b = "World!"
+print($a + $b)

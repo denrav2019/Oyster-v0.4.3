@@ -1,0 +1,9 @@
+$fh = fopen("test_feof.txt", "w")
+$x = fprint($fh, "Hello")
+$x = fclose($fh)
+
+$fh2 = fopen("test_feof.txt", "r")
+$line = freadline($fh2)
+print($line)
+print(feof($fh2))
+$x = fclose($fh2)

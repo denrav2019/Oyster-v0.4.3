@@ -1,0 +1,9 @@
+%h = ("name" => "Oyster", "version" => "0.2.0")
+print(exists(%h, "name"))
+print(exists(%h, "author"))
+print(exists(%h, 0))
+print(exists(%h, 5))
+
+%h2 = (10, 20, 30)
+print(exists(%h2, 0))
+print(exists(%h2, 3))

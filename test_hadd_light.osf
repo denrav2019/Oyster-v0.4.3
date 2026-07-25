@@ -1,0 +1,5 @@
+%map = ()
+hadd(%map, "one")
+hadd(%map, "two")
+print(%map[0])
+print(%map[1])

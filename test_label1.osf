@@ -1,0 +1,7 @@
+$i = 0
+LOOP: while($i < 5) {
+    inc $i
+    print($i)
+    if($i == 3) { last LOOP }
+}
+print("done")

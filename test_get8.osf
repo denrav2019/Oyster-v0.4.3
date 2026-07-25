@@ -1,0 +1,7 @@
+@arr = (10, 20, 30)
+print(get8(@arr, 0))
+print(get8(@arr, 1))
+
+$s = "Hello"
+print(get8($s, 0))
+print(get8($s, 1))

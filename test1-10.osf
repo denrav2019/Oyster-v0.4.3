@@ -1,0 +1,8 @@
+print("=== Test 9: Concatenation ===")
+$first = "Hello"
+$last = "World"
+print($first + " " + $last)
+
+print("=== Test 10: Functions ===")
+fun add($x, $y) { return $x + $y }
+print(add(10, 20))

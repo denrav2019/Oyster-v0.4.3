@@ -1,0 +1,11 @@
+$name1 = "test_file2.txt"
+$mode_w = "w"
+$fh = fopen($name1, $mode_w)
+$x = fprint($fh, "Hello, Oyster!")
+$x = fclose($fh)
+
+$mode_r = "r"
+$fh2 = fopen($name1, $mode_r)
+$line = freadline($fh2)
+print($line)
+$x = fclose($fh2)

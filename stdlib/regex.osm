@@ -1,0 +1,12 @@
+# Regex Module for Oyster
+# Copyright (c) 2026 Daniil Kranchev
+
+fun match(@str, @pattern) {
+    return builtin_regex_match(@str, @pattern)
+}
+
+fun replace(@str, @pattern, @replacement) {
+    return builtin_regex_replace(@str, @pattern, @replacement)
+}
+
+export match, replace

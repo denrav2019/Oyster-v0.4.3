@@ -1,0 +1,8 @@
+$fh = fopen("test_file.txt", "w")
+$x = fprint($fh, "Hello, Oyster!\n")
+$x = fclose($fh)
+
+$fh2 = fopen("test_file.txt", "r")
+$line = freadline($fh2)
+print($line)
+$x = fclose($fh2)

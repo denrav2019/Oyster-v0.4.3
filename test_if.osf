@@ -1,0 +1,14 @@
+$x = 42
+
+if($x > 100) {
+  print(">100")
+}
+else if($x > 50) {
+  print(">50")
+}
+else if($x > 10) {
+  print(">10")
+}
+else {
+  print("<=10")
+}

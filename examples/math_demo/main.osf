@@ -1,0 +1,7 @@
+# Math demo
+use "math" as m
+
+for $i in 0..10 {
+    %rad = $i * m.%PI / 10
+    print("sin(" . %rad . ") = " . m.sin(%rad))
+}

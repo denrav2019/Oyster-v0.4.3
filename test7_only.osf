@@ -1,0 +1,7 @@
+print("=== Test 7: Hashes ===")
+%h = ("name" => "Oyster", "version" => "0.3.0")
+print(%h["name"])
+print(%h["version"])
+print(haskeys(%h))
+print(exists(%h, "name"))
+print("")

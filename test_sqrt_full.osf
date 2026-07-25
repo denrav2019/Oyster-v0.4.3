@@ -1,0 +1,5 @@
+print(sqrt(4))
+print(sqrt(2))
+print(sqrt(3.14159))
+print(sqrt(0))
+print(sqrt(100))

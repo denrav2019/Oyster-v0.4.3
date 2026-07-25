@@ -1,0 +1,13 @@
+print("=== for in + redo ===")
+@arr = (10, 20, 30)
+for $x in @arr {
+    print($x)
+    if($x == 20) { redo }
+}
+
+print("=== for C-style + redo ===")
+for($i = 0; $i < 3; inc $i) {
+    print($i)
+    if($i == 1) { redo }
+}
+print("done")

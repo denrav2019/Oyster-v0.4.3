@@ -1,0 +1,10 @@
+@arr = (10, 20, 30)
+$count = 0
+for $x in @arr {
+    print($x)
+    if($x == 20) { 
+        inc $count
+        if($count < 2) { redo }
+    }
+}
+print("done")

@@ -1,0 +1,31 @@
+print("=== frename ===")
+$fh = fopen("test_old.txt", "w")
+$x = fprint($fh, "Hello, Oyster!")
+$x = fclose($fh)
+
+$x = frename("test_old.txt", "test_new.txt")
+$fh2 = fopen("test_new.txt", "r")
+$line = freadline($fh2)
+print($line)
+$x = fclose($fh2)
+
+print("=== funlink ===")
+$x = funlink("test_new.txt")
+$fh3 = fopen("test_new.txt", "r")
+if($fh3 == -1) {
+    print("file deleted")
+} else {
+    $x = fclose($fh3)
+}
+
+print("=== sysread/syswrite ===")
+$fh4 = fopen("test_sys.txt", "w")
+$x = syswrite($fh4, "Data from syswrite")
+$x = fclose($fh4)
+
+$fh5 = fopen("test_sys.txt", "r")
+$data = sysread($fh5, 10)
+print($data)
+$x = fclose($fh5)
+
+print("done")

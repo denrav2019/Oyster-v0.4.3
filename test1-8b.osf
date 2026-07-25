@@ -1,0 +1,9 @@
+print("=== Test 7: Hashes ===")
+%h = ("name" => "Oyster")
+print(%h["name"])
+print("")
+
+print("=== Test 8: String functions ===")
+print(lc("HELLO"))
+print(chop("Oyster!"))
+print("")

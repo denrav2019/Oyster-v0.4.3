@@ -1,0 +1,9 @@
+print(abs(-42))
+print(abs(3.14))
+
+print(sign(-5))
+print(sign(0))
+print(sign(7.5))
+
+print(int(3.14))
+print(int(-2.7))

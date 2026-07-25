@@ -1,0 +1,5 @@
+%h = ("name" => "Oyster", "version" => "0.3.5")
+print(%h["name"])
+
+$x = %h["version"]
+print($x)

@@ -1,0 +1,7 @@
+$s = "Hello, World!"
+$copy = clone($s)
+print($s)
+print($copy)
+
+$x = deallocate($s)
+print($x)

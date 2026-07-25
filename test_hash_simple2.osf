@@ -1,0 +1,5 @@
+%h = ("name" => "Oyster")
+print(%h)
+
+hadd(%h, "0.2.0", "version")
+print(%h)

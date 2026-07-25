@@ -1,0 +1,8 @@
+# JSON API example
+use "net" as net
+use "json" as json
+
+&resp = net.http_get("https://jsonplaceholder.typicode.com/posts/1")
+$body = hash_get(&resp, "body")
+&data = json.parse($body)
+print("Title: " . hash_get(&data, "title"))

@@ -1,0 +1,20 @@
+$a = 5
+$b = 10
+
+fun multiply($x, $y) {
+    return $x * $y
+}
+
+fun add($x, $y) {
+    return $x + $y
+}
+
+print(add($a, $b))
+print(multiply($a, $b))
+
+fun factorial($n) {
+    if($n <= 1) { return 1 }
+    return $n * factorial($n - 1)
+}
+
+print(factorial(5))

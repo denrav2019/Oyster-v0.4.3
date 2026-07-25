@@ -1,0 +1,4 @@
+print(sqrt(16))
+$x = undef
+print(ifundef($x 42))
+print(ifundef(10 42))

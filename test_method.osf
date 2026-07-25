@@ -1,0 +1,9 @@
+$x = -42
+print($x.abs())
+
+$s = "Hello"
+print($s.uc())
+
+$a = "Hello, "
+$b = "World!"
+print($a ^ $b)

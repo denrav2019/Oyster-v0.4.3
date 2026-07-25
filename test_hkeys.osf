@@ -1,0 +1,7 @@
+%h = ("name" => u"Ойстер", "version" => "0.4.2")
+@vals = hvalues(%h)
+@keys = hkeys(%h)
+print(@vals[0])
+print(@vals[1])
+print(@keys[0])
+print(@keys[1])

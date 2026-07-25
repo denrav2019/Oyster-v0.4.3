@@ -1,0 +1,12 @@
+$s = u"Привет, мир!"
+print($s)
+
+$ascii = "Hello, World!"
+print($ascii)
+
+$mixed = u"Hello, Мир!"
+print($mixed)
+
+print(len($s))
+print(len($ascii))
+print(len($mixed))

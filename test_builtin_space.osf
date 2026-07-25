@@ -1,0 +1,5 @@
+%h = ("name" => "Oyster")
+setkey(%h "name" "key")
+print(%h["key"])
+
+print(index("hello" "l" 0))

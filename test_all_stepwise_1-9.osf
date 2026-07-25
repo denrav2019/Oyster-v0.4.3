@@ -1,0 +1,8 @@
+print("=== Test 8: String functions ===")
+print(lc("HELLO"))
+print(chop("Oyster!"))
+print("")
+
+print("=== Test 9: Concatenation ===")
+print("Hello" + " " + "World")
+print("")

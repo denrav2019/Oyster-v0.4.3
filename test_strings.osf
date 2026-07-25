@@ -1,0 +1,8 @@
+$s = "Hello"
+print($s)
+
+print($s.uc())
+
+$a = "Hello, "
+$b = "World!"
+print($a ^ $b)

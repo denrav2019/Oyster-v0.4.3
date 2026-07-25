@@ -1,0 +1,2 @@
+%h = ("name" => "Oyster")
+print(%h["name"])

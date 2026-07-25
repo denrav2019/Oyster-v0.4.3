@@ -1,0 +1,32 @@
+print("=== Postfix ===")
+$a = 10
+$b = 20
+$c = postfix{ $a $b + 2 / }
+print($c)
+
+print("=== Methods ===")
+$x = -42
+print($x.abs())
+$s = "hello"
+print($s.uc())
+@arr = (3, 1, 2)
+print(@arr.sort())
+
+print("=== Exp/Ln/Log ===")
+print(exp(1))
+print(ln(2.718281828))
+print(log(100))
+
+print("=== Clone/Dealloc for strings ===")
+$str = "Oyster"
+$copy = clone($str)
+print($copy)
+$x = deallocate($str)
+print($x)
+
+print("=== User methods ===")
+fun add($x, $y) { return $x + $y }
+print(add(10, 20))
+print(10.add(20))
+
+print("done")

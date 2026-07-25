@@ -1,0 +1,7 @@
+fun add($x, $y) { return $x + $y }
+
+print("step 1")
+@items = ("one", "two", "three")
+print("step 2")
+%map = ()
+print("step 3")

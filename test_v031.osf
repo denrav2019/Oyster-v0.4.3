@@ -1,0 +1,22 @@
+# Функции с разным регистром
+FUN add($x, $y) { RETURN $x + $y }
+PRINT(add(10, 20))
+
+# Методы
+$x = -42
+print($x.abs())
+print(abs($x))
+
+$s = "Hello"
+print($s.uc())
+print(uc($s))
+
+# Постфикс
+$a = 10
+$b = 20
+$c = postfix{ $a $b + 2.0 / }
+print($c)
+
+# Конкатенация
+$h = "Hello, " ^ "World!"
+print($h)

@@ -1,0 +1,7 @@
+$a = 0
+for($i = 0; $i < 3; inc $i) {
+    print($i)
+    $a = $a + 10
+    if($a < 100) { redo }
+}
+print("done")

@@ -1,0 +1,6 @@
+$c = 0
+for($i = 0; $i < 3; inc $i) {
+    print($i)
+    if($i == 1) { inc $c; if($c < 2) { redo } }
+}
+print("done")

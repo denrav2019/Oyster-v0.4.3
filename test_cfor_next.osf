@@ -1,0 +1,5 @@
+for($i = 0; $i < 5; inc $i) {
+    if($i == 2) { next }
+    print($i)
+}
+print("done")

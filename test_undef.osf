@@ -1,0 +1,11 @@
+$x = undef
+print(undef($x))
+
+$y = 42
+print(undef($y))
+
+$z = ifundef($x, 99)
+print($z)
+
+$w = ifundef($y, 99)
+print($w)

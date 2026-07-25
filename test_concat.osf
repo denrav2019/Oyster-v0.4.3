@@ -1,0 +1,7 @@
+$a = "Hello, "
+$b = "World!"
+print($a + $b)
+
+$x = 10
+$y = 20
+print($x + $y)

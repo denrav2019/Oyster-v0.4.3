@@ -1,0 +1,10 @@
+%h = ("name" => "Oyster")
+setkey(%h "name" "key")
+print(%h["key"])
+
+print(index("hello" "l" 0))
+
+print(strcmp("a" "b"))
+
+$x = undef
+print(ifundef($x 42))

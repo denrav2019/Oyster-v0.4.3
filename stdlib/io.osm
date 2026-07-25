@@ -1,0 +1,16 @@
+# IO Module for Oyster
+# Copyright (c) 2026 Daniil Kranchev
+
+fun print(@msg) {
+    return builtin_print(@msg)
+}
+
+fun slurp(@path) {
+    return builtin_slurp(@path)
+}
+
+fun spew(@path, @content) {
+    return builtin_spew(@path, @content)
+}
+
+export print, slurp, spew

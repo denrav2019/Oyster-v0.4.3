@@ -1,0 +1,20 @@
+print("=== Test 3: Arithmetic ===")
+$a = 10
+$b = 3
+print($a + $b)
+print("")
+
+print("=== Test 4: If/Else ===")
+$x = 42
+if($x > 100) { print("big") } else { print("small") }
+print("")
+
+print("=== Test 6: Arrays ===")
+@arr = (1, 2, 3)
+print(@arr[0])
+print("")
+
+print("=== Test 7: Hashes ===")
+%h = ("name" => "Oyster")
+print(%h["name"])
+print("")

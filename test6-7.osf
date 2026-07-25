@@ -1,0 +1,9 @@
+print("=== Test 6: Arrays ===")
+@arr = (1, 2, 3, 4, 5)
+print(@arr[0])
+print("")
+
+print("=== Test 7: Hashes ===")
+%h = ("name" => "Oyster", "version" => "0.3.0")
+print(%h["name"])
+print("")

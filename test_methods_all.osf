@@ -1,0 +1,25 @@
+print("=== Math methods ===")
+$x = -42
+print($x.abs())
+print($x.sign())
+print($x.inv())
+$x = 3.14
+print($x.int())
+print($x.frac())
+$x = 16
+print($x.sqrt())
+
+print("=== String methods ===")
+$s = "Hello"
+print($s.lc())
+print($s.uc())
+$s2 = "Oyster!"
+print($s2.chop())
+print($s.lcfirst())
+print($s.ucfirst())
+print($s.length())
+
+print("=== Array methods ===")
+@arr = (3, 1, 2)
+print(@arr.sort())
+print(@arr.reverse())

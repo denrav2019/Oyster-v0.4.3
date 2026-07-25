@@ -1,0 +1,4 @@
+$y = ifundef($maybe_undef, 1000)
+print($y)
+$y = undef
+print($y)

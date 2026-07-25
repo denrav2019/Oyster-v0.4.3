@@ -1,0 +1,7 @@
+%h = ("x" => 100, "y" => 200)
+print(%h)
+
+$r = deallocate(%h)
+print($r)
+
+print("done")

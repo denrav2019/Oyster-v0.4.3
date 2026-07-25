@@ -1,0 +1,2 @@
+@items = ("one", "two")
+print(@items[0])

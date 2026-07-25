@@ -1,0 +1,3 @@
+PRINT("Hello")
+Print("World")
+If(1) { print("YES") }

@@ -1,0 +1,15 @@
+fun add($x, $y) { return $x + $y }
+
+print("=== Test 14: Combined ===")
+@items = ("one", "two", "three")
+%map = ()
+$idx = 0
+while($idx < len(@items)) {
+    $item = @items[$idx]
+    hadd(%map, $idx, $item)
+    inc $idx
+}
+$x = %map[0]
+print($x)
+print(haskeys(%map))
+print("done")

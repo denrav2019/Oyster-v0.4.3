@@ -1,0 +1,51 @@
+print("=== while + last ===")
+$i = 0
+while($i < 10) {
+    if($i == 3) { last }
+    print($i)
+    inc $i
+}
+
+print("=== while + next ===")
+$i = 0
+while($i < 5) {
+    inc $i
+    if($i == 3) { next }
+    print($i)
+}
+
+print("=== while + redo ===")
+$i = 0
+while($i < 3) {
+    inc $i
+    print($i)
+    if($i == 2) { redo }
+}
+
+print("=== for in + last ===")
+@arr = (10, 20, 30, 40)
+for $x in @arr {
+    if($x == 30) { last }
+    print($x)
+}
+
+print("=== for in + next ===")
+@arr = (10, 20, 30, 40)
+for $x in @arr {
+    if($x == 20) { next }
+    print($x)
+}
+
+print("=== for C-style + last ===")
+for($i = 0; $i < 10; inc $i) {
+    if($i == 3) { last }
+    print($i)
+}
+
+print("=== for C-style + next ===")
+for($i = 0; $i < 5; inc $i) {
+    if($i == 2) { next }
+    print($i)
+}
+
+print("done")

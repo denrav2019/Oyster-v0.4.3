@@ -1,0 +1,63 @@
+# ============================================================
+# test_extended.osf — Extended mode tests (-e flag)
+# ============================================================
+
+print("=== Extended Mode Tests ===")
+print("")
+
+# --- postfix{} ---
+print("--- postfix{} ---")
+$a = 10
+$b = 20
+$c = postfix{ $a $b + 2.0 / }
+print($c)    # ожидается 15.0
+
+$d = postfix{ $a $b * $c + }
+print($d)    # ожидается (10 * 20) + 15 = 215
+
+$x = postfix{ 5 3 2 ^ + }
+print($x)    # ожидается 5 + 3^2 = 14
+print("")
+
+# --- method() ---
+print("--- method() ---")
+fun greet($name) {
+    return "Hello, " . $name
+}
+fun double($x) {
+    return $x * 2
+}
+
+$result = greet("Oyster")
+print($result)
+
+$num = 21
+$result = double($num)
+print($result)
+
+# Цепочка method()
+$text = "  hello world  "
+# $result = $text.chomp().uc()
+print("method chain test (uncomment in code)")
+print("")
+
+# --- postfix{} со строками ---
+print("--- postfix with strings ---")
+$greeting = postfix{ "Hello, " "World!" . }
+print($greeting)
+
+$name = "Oyster"
+$msg = postfix{ "Hi " $name . }
+print($msg)
+print("")
+
+# --- method() с return ---
+print("--- method return ---")
+fun add_three($x, $y, $z) {
+    return $x + $y + $z
+}
+$sum = add_three(1, 2, 3)
+print($sum)
+print("")
+
+print("=== Extended tests complete ===")

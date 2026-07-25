@@ -1,0 +1,4 @@
+fun add($x, $y) { return $x + $y }
+@items = ("one", "two")
+$idx = 0
+print(@items[$idx])

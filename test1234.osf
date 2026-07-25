@@ -1,0 +1,163 @@
+# ============================================================
+# test_v0.3.0.osf — Oyster v0.3.0 Feature Tests
+# ============================================================
+
+# --- 1. Прямые строки (без пула) ---
+print("=== Test 1: Direct strings ===")
+$s1 = "Hello, World!"
+print($s1)
+$s2 = "Hello, World!"   # та же строка — не дубликат в .oce
+print($s2)
+print("")
+
+# --- 2. Константы ---
+print("=== Test 2: Constants ===")
+&PI = 3.14159
+&NAME = "Oyster"
+print(&PI)
+print(&NAME)
+print("")
+
+# --- 3. Арифметика и сравнения ---
+print("=== Test 3: Arithmetic ===")
+$a = 10
+$b = 3
+print($a + $b)
+print($a - $b)
+print($a * $b)
+print($a / $b)
+print($a % $b)
+print($a == $b)
+print($a != $b)
+print($a > $b)
+print($a < $b)
+print("")
+
+# --- 4. Условия ---
+print("=== Test 4: If/Else ===")
+$x = 42
+if($x > 100) {
+    print("big")
+} else {
+    print("small")
+}
+
+if($x == 42) {
+    print("the answer")
+}
+print("")
+
+# --- 5. Циклы ---
+print("=== Test 5: While loop ===")
+$i = 0
+while($i < 5) {
+    print($i)
+    inc($i)
+}
+print("")
+
+# --- 6. Массивы ---
+print("=== Test 6: Arrays ===")
+@arr = (1, 2, 3, 4, 5)
+print(len(@arr))
+print(@arr[0])
+print(@arr[4])
+@arr[2] = 99
+print(@arr[2])
+print("")
+
+# --- 7. Хеши ---
+print("=== Test 7: Hashes ===")
+%h = ("name" => "Oyster", "version" => "0.3.0")
+print(%h["name"])
+print(%h["version"])
+print(haskeys(%h))
+print(exists(%h, "name"))
+print("")
+
+# --- 8. Строковые функции ---
+print("=== Test 8: String functions ===")
+$str = "  Hello World  "
+print(lc($str))
+print(uc($str))
+print(chomp("line\n"))
+print(chop("Oyster!"))
+print(len($str))
+print(ord("A"))
+print(chr(65))
+print("")
+
+# --- 9. Конкатенация ---
+print("=== Test 9: Concatenation ===")
+$first = "Hello"
+$last = "World"
+print($first . " " . $last)
+print("")
+
+# --- 10. Функции ---
+print("=== Test 10: Functions ===")
+fun add($x, $y) {
+    return $x + $y
+}
+print(add(10, 20))
+
+fun factorial($n) {
+    if($n <= 1) {
+        return 1
+    }
+    return $n * factorial($n - 1)
+}
+print(factorial(5))
+print("")
+
+# --- 11. Математика ---
+print("=== Test 11: Math ===")
+print(abs(-42))
+print(sign(-99))
+print(int(3.14))
+print(frac(3.14))
+print(sqrt(16))
+print(inv(5))
+print("")
+
+# --- 12. postfix{} (extended mode) ---
+print("=== Test 12: postfix{} ===")
+# Только в режиме -e
+# $a = 10
+# $b = 20
+# $c = postfix{ $a $b + 2.0 / }
+# print($c)   # = (10 + 20) / 2.0 = 15.0
+print("postfix test skipped (use -e flag)")
+print("")
+
+# --- 13. method() (extended mode) ---
+print("=== Test 13: method() ===")
+# Только в режиме -e
+fun greet($name) {
+    print("Hello, " . $name)
+}
+fun square($x) {
+    return $x * $x
+}
+# $result = 5.square()   # вызов как метод
+# print($result)
+print("method test skipped (use -e flag)")
+print("")
+
+# --- 14. Комбинированный тест ---
+print("=== Test 14: Combined ===")
+@items = ("one", "two", "three")
+%map = ()
+$idx = 0
+while($idx < len(@items)) {
+    hadd(%map, $idx, @items[$idx])
+    inc($idx)
+}
+print(%map[0])
+print(%map[1])
+print(%map[2])
+print(exists(%map, 0))
+print(haskeys(%map))
+print("")
+
+print("=== All basic tests complete ===")

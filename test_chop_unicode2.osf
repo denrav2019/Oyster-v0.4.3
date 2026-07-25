@@ -1,0 +1,4 @@
+$s = u"Привет!"
+print($s)
+print(chop($s))
+print(len(chop($s)))

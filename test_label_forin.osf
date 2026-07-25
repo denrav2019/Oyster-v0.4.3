@@ -1,0 +1,6 @@
+@arr = (10, 20, 30, 40)
+LOOP: for $x in @arr {
+    print($x)
+    if($x == 20) { last LOOP }
+}
+print("done")

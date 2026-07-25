@@ -1,0 +1,21 @@
+%h1 = ("name" => "Oyster", "version" => "0.2.0")
+%h2 = (10, 20, 30, 40, 50)
+%h3 = array(3)
+
+%h3[0] = 100
+%h3[1] = 200
+%h3[2] = 300
+
+print(%h1)
+print(%h2)
+print(%h3)
+
+print(len(%h1))
+print(haskeys(%h1))
+print(haskeys(%h2))
+
+%copy = clone(%h1)
+print(%copy)
+
+$x = deallocate(%copy)
+print($x)

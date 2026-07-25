@@ -1,0 +1,11 @@
+# Web server example
+use "net" as net
+
+print("Starting web server on port 8080...")
+$server = net.tcp_listen(8080)
+
+while true {
+    $client = net.accept($server)
+    net.send($client, "HTTP/1.0 200 OK\n\nHello from Oyster!")
+    net.close($client)
+}

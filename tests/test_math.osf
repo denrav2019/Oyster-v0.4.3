@@ -1,0 +1,5 @@
+# Math test
+use "math" as m
+
+$result = m.sin(m.%PI / 2)
+print("sin(PI/2) = " . $result)

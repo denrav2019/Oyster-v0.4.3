@@ -1,0 +1,15 @@
+fun add($x, $y) { return $x + $y }
+
+@items = ("one", "two", "three")
+%map = ()
+$idx = 0
+while($idx < len(@items)) {
+    $item = @items[$idx]
+    hadd(%map, $item)
+    inc $idx
+}
+print(%map[0])
+print(%map[1])
+print(%map[2])
+print(haskeys(%map))
+print("done")

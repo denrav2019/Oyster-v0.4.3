@@ -1,0 +1,4 @@
+print("Hello\nWorld!")
+print("Tab:\tEnd")
+print("Quote: \"Oyster\"")
+print("Backslash: \\")

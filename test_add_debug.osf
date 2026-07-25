@@ -1,0 +1,6 @@
+fun add($x, $y) { 
+  print($x)
+  print($y)
+  return $x + $y 
+}
+print(add(10, 20))

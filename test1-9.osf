@@ -1,0 +1,8 @@
+print("=== Test 8: String functions ===")
+$str = "  Hello World  "
+print(lc($str))
+
+print("=== Test 9: Concatenation ===")
+$first = "Hello"
+$last = "World"
+print($first + " " + $last)

@@ -1,0 +1,6 @@
+OUTER: for($i = 0; $i < 5; inc $i) {
+    if($i == 1) { next OUTER }
+    if($i == 3) { last OUTER }
+    print($i)
+}
+print("done")

@@ -1,0 +1,14 @@
+%h = ("name" => "Oyster", "version" => "0.2.0")
+print(%h)
+
+setkey(%h, "version", "ver")
+print(%h)
+
+$k = getkey(%h, 0)
+print($k)
+
+hadd(%h, "C", "language")
+print(%h)
+
+hdel(%h)
+print(%h)

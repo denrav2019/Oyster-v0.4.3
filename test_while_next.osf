@@ -1,0 +1,7 @@
+$i = 0
+while($i < 5) {
+    inc $i
+    if($i == 3) { next }
+    print($i)
+}
+print("done")

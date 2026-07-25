@@ -1,0 +1,4 @@
+$s = u"Привет, мир! мир"
+print(rindex($s, u"мир"))
+print(rindex($s, u"При"))
+print(rindex($s, u"hello"))

@@ -1,0 +1,6 @@
+@items = ("one", "two", "three")
+$idx = 0
+while($idx < len(@items)) {
+    print($idx)
+    inc $idx
+}

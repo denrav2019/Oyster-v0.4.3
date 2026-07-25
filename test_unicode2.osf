@@ -1,0 +1,2 @@
+$s = "Hello, \uМир!"
+print($s)

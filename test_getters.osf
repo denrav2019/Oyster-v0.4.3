@@ -1,0 +1,21 @@
+@arr = (10, 20, 30)
+print("=== get8 ===")
+print(get8(@arr, 0))
+print(get8(@arr, 1))
+
+print("=== get16 ===")
+print(get16(@arr, 0))
+
+print("=== get32 ===")
+print(get32(@arr, 0))
+
+print("=== get64 ===")
+print(get64(@arr, 0))
+
+print("=== string get8 ===")
+$s = "Hello"
+print(get8($s, 0))
+print(get8($s, 1))
+print(get8($s, 2))
+print(get8($s, 3))
+print(get8($s, 4))

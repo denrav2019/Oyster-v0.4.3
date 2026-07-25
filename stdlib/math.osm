@@ -1,0 +1,19 @@
+# Math Module for Oyster
+# Copyright (c) 2026 Daniil Kranchev
+
+const %PI = 3.141592653589793
+const %E = 2.718281828459045
+
+fun sin(%x) {
+    return builtin_sin(%x)
+}
+
+fun cos(%x) {
+    return builtin_cos(%x)
+}
+
+fun sqrt(%x) {
+    return builtin_sqrt(%x)
+}
+
+export %PI, %E, sin, cos, sqrt

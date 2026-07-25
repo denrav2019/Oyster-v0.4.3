@@ -1,0 +1,7 @@
+$s = u"Привет, мир!"
+print($s)
+print(len($s))
+
+$s2 = u"Hello"
+print($s2)
+print(len($s2))

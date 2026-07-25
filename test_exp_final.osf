@@ -1,0 +1,5 @@
+print(exp(1))
+print(ln(2.718281828))
+print(log(100))
+print(exp(0))
+print(log(1))

@@ -1,0 +1,30 @@
+print("=== Test 1: Direct strings ===")
+$s1 = "Hello, World!"
+print($s1)
+print("")
+
+print("=== Test 2: Constants ===")
+&PI = 3.14159
+print(&PI)
+print("")
+
+print("=== Test 3: Arithmetic ===")
+$a = 10
+$b = 3
+print($a + $b)
+print("")
+
+print("=== Test 4: If/Else ===")
+$x = 42
+if($x > 100) { print("big") } else { print("small") }
+print("")
+
+print("=== Test 5: While loop ===")
+$i = 0
+while($i < 3) { print($i); inc $i }
+print("")
+
+print("=== Test 6: Arrays ===")
+@arr = (1, 2, 3, 4, 5)
+print(@arr[0])
+print("")

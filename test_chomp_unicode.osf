@@ -1,0 +1,3 @@
+$s = u"Привет\n"
+print(chomp($s))
+print(len(chomp($s)))

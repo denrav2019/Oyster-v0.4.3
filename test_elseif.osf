@@ -1,0 +1,25 @@
+$x = 42
+
+if($x > 100) {
+    print(">100")
+}
+elseif($x > 50) {
+    print(">50")
+}
+elseif($x > 10) {
+    print(">10")
+}
+else {
+    print("<=10")
+}
+
+$x = 75
+if($x > 100) {
+    print("big")
+}
+elseif($x > 50) {
+    print("medium")
+}
+else {
+    print("small")
+}

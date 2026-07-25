@@ -1,0 +1,9 @@
+fun add($x, $y) { return $x + $y }
+
+@items = ("one", "two", "three")
+$idx = 0
+while($idx < len(@items)) {
+    $item = @items[$idx]
+    print($item)
+    inc $idx
+}

@@ -1,0 +1,3 @@
+%h = ("name" => "Oyster", "version" => "0.2.0")
+$key = "author"
+print(exists(%h, $key))

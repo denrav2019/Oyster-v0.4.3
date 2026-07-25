@@ -1,0 +1,3 @@
+print(sqrt(16))
+print(sqrt(2))
+print(sqrt(3.14159))

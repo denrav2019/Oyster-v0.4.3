@@ -1,0 +1,19 @@
+fun add($x, $y) { return $x + $y }
+
+print("=== Test 14: Combined ===")
+print("step 1")
+@items = ("one", "two", "three")
+print("step 2")
+%map = ()
+print("step 3")
+$idx = 0
+print("step 4")
+while($idx < len(@items)) {
+    print("loop")
+    hadd(%map, $idx, @items[$idx])
+    inc $idx
+}
+print("step 5")
+$x = %map[0]
+print($x)
+print("done")
