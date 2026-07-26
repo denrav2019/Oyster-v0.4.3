@@ -1,87 +1,65 @@
 # Oyster Programming Language
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-0.4.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Oyster is a dynamic, Perl-inspired scripting language with a focus on simplicity and performance.
+* Oyster is a minimalistic, Perl-inspired scripting programming language with a focus on simplicity and performance.
+* Oyster — минималистичный скриптовый язык программирования, вдохновленный Perl и ориентированный на простоту и производительность
 
-## Features
+**Motto / Девиз:** Efficiency, readability, minimalism! / Эффективность, читаемость, минимализм!
 
-- Dynamic typing with 16-byte tagged values
-- Perl-inspired syntax with modern enhancements
-- Fast VM with dispatch table (ASCII → handler)
-- Module system with .osm (source) and .oem (compiled)
-- Rich standard library (regex, io, net, math, os, json)
-- Built-in debugger with breakpoints and stepping
-- UTF-32 strings with O(1) indexed access
+## Features / Возможности
+- Dynamic typing with 16-byte tagged values / Динамическая типизация с 16-байтными tagged values
+- Perl-inspired syntax with modern enhancements / Perl-подобный синтаксис с современными улучшениями
+- Fast VM with dispatch table (ASCII → handler) / Быстрая VM с таблицей диспетчеризации
+- Module system with .osm (source) and .ocm (compiled) / Модульная система с .osm и .ocm
+- Case-insensitive syntax / Регистронезависимый синтаксис
+- Method-style function calls / Методные вызовы функций
+- Postfix notation support / Поддержка обратной польской записи
+- Fixed-point arithmetic (64.32) / Арифметика с фиксированной точкой
+- UTF-32 strings with O(1) indexed access / Строки UTF-32 с индексированным доступом O(1)
 
-## Installation
+## Installation / Установка
 
-`git clone https://github.com/denrav2019/Oyster-v0.4.0.git`  
-`cd Oyster-v0.4.0`  
+`git clone https://github.com/denrav2019/Oyster-v0.4.3.git`  
+`cd Oyster-v0.4.3`  
 `make`  
 `sudo make install`
 
-## Quick Start
+## Quick Start / Быстрый старт
 
-Create a file `hello.osf`:
+Create a file `hello.osf`: / Создайте файл `hello.osf` :
 
-`print("Hello, Oyster!")`
+`oyster print("Hello, Oyster!")`
 
-Then run:
+Then run / Затем запустите:
 
-`oyster compile hello.osf`  
-`oyster run hello.oce`
+```bash
+./oyster hello.osf          # compile and run / компиляция и запуск
+./oyster -c hello.osf       # compile only / только компиляция
+./oyster -s hello.osf       # compile with source comments / с исходными комментариями
+./oyster hello.oce          # run compiled bytecode / запуск скомпилированного
+```
 
-## Example
+### Compiler Options / Опции компилятора
+* -c Compile only, without execution / Только компиляция, без выполнения
+* -s Add source lines as comments in bytecode / Добавлять исходные строки как комментарии
+* -e Extended mode (float, edecimal) / Расширенный режим
+* -o <file> Specify output file name / Указать имя выходного файла
+* -I <path> Add path to @INC for module search / Добавить путь в @INC
+* -h, --help Show help / Показать справку
 
-`use "io" as io`  
-`use "math" as m`  
-`@content = io.slurp("data.txt")`  
-`print("File size: " . len(@content))`  
-`$result = m.sin(m.%PI / 2)`  
-`print("sin(PI/2) = " . $result)`
+## Example / Пример
+```oyster
+use "io" as io
+use "math" as m 
+@content = io.slurp("data.txt")
+print("File size: " + len(@content))
+$result = m.sin(&m.PI / 2)
+print("sin(PI/2) = " + $result)
+```
 
-## Building from Source
-
-`make`  
-`make test`  
-`make install`  
-`make clean`
-
-## Dependencies
-
-**Ubuntu/Debian:**  
-`sudo apt install build-essential libpcre2-dev`
-
-**Fedora/RHEL:**  
-`sudo dnf install gcc make pcre2-devel`
-
-**macOS:**  
-`brew install pcre2`
-
-## Author
-
-**Daniil Kranchev**  
-GitHub: [@denrav2019](https://github.com/denrav2019)  
-Email: nnikus2017@gmail.com
-
-## License
-
-MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Perl - for inspiration  
-- Lua - for VM design concepts  
-- The open source community
-
-
-# Oyster Language v0.4.0
-
-Oyster — минималистичный язык программирования, вдохновлённый Perl. Умеренная минималистичность, отсутствие системных переменных, единый числовой тип с фиксированной точкой, регистронезависимый синтаксис, поддержка методного типа вызова функций, поддержка обратной польской записи.
-
-Девиз Oyster - эффективность, читаемость, минимализм!
+# Oyster Language v0.4.3
 
 ### Быстрый старт
 
@@ -103,79 +81,76 @@ gcc -o oyster main.c compiler.c vm.c -lm -O2
 
 ```
 
-
-### Опции компилятора
-Флаг	Описание
-* -c	Только компиляция, без выполнения
-* -s	Добавлять исходные строки как комментарии в байт-код
-* -e	Расширенный режим (float)
-* -o <file>	Указать имя выходного файла
-* -I <path>	Добавить путь в @INC для поиска модулей
-* -h, --help	Показать справку
-
-
-### Типы данных
+### Data Types / Типы данных
 
 #### V_NUMBER (основной числовой тип)
-64.32 fixed point. Целая часть — 64 бита, дробная — 32 бита. Обеспечивает точные десятичные дроби.
+* 64.32 fixed point. 64-bit integer part, 32-bit fractional part. Provides exact decimal fractions.
+* 64.32 fixed point. Целая часть — 64 бита, дробная — 32 бита. Обеспечивает точные десятичные дроби.
 
 ```oyster
-$x = 42          # целое
-$y = 3.14        # с дробной частью
-$z = 0.1 + 0.2   # 0.3 (точно!)
+$x = 42          # nteger / целое
+$y = 3.14        # with fractional part / с дробной частью
+$z = 0.1 + 0.2   # 0.3 (exact! / точно!)
 ```
 
 #### V_STRING
-Строки в двойных или одинарных кавычках на основе ByteArray.
+* Strings in double or single quotes, based on ByteArray.
+* Строки в двойных или одинарных кавычках на основе ByteArray.
 
 ```oyster
 $name = "Oyster"
 $path = '/usr/local/bin'
 
 $hw = "Hello,
-word!" # Многострочные строки
+word!" # Multi-line strings / Многострочные строки
 
-$hw2 = "Hellow,\n word!" # Escape-последовательности (\n, \t, \\, \", \', \r)
+$hw2 = "Hellow,\n word!" # Escape sequences / Escape-последовательности (\n, \t, \\, \", \', \r)
+
+$unistring = u"My unicode string" + u" с кириллицей" # Unicode defined string / явное задание строки Unicode
 
 ```
 
 #### V_ARRAY
-Массивы фиксированной длины на основе ByteArray. Индексация с 0.
+* Fixed-length arrays based on ByteArray. Zero-based indexing.
+* Массивы фиксированной длины на основе ByteArray. Индексация с 0.
 
 ```oyster
 @arr = (10, 20, 30, 40)
 $x = @arr[0]         # 10
-@arr[1] = 99         # замена элемента
+@arr[1] = 99         # replace element / замена элемента
 $len = len(@arr)     # 4
 
-@arr2 = array(3)    # создание пустого массива
+@arr2 = array(3)    # create empty array / создание пустого массива
 ```
 
 #### V_HASH
-Хеш на связных сегментах. Ключи — строки, значения — любые типы.
+* Hash on linked segments. Keys are strings, values are any type.
+* Хеш на связных сегментах. Ключи — строки, значения — любые типы.
 
 ```oyster
 %hash = (key1 => 100, key2 => "value")
-$x = %hash["key1"]       # доступ к элементу
-%hash["key3"] = 300      # добавление/замена
-$exists = exists(%hash["key2"])  # проверка существования ключа
+$x = %hash["key1"]       # access element / доступ к элементу
+%hash["key3"] = 300      # add/replace / добавление/замена
+$exists = exists(%hash["key2"])  # create empty hash / проверка существования ключа
 
 %hash = ()  # сщздание пустого хеша
-hadd(%hash, "0.2.0", "version") 
+hadd(%hash, "0.5.0", "version") 
 print(%hash)
 ```
-Лёгкий хеш - хеш без ключей. Создаётся присваиванием массива хешу:
+* Light hash — hash without keys. Created by assigning an array to a hash:
+* Лёгкий хеш - хеш без ключей. Создаётся присваиванием массива хешу:
 ```oyster
 %hash = ("one", "two", "three")
 %hash = array(3)
 ```
 
 #### V_UNDEF
-Неопределённое значение. Используется для непроинициализированных переменных.
+* Undefined value. Used for uninitialized variables.
+* Неопределённое значение. Используется для непроинициализированных переменных.
 
 ```oyster
-$x = undef($y)           # проверка на undef
-$z = ifundef($maybe, 0)  # замена если undef
+$x = undef($y)           # check if undef / проверка на undef
+$z = ifundef($maybe, 0)  # replace if undef / замена если undef
 ```
 
 #### V_FLOAT (планируется для -e режима)
@@ -187,16 +162,17 @@ $y = $x.sqrt()
 ```
 
 
-### Переменные
+### Variables / Переменные
 ```oyster
-$var — скалярная переменная
+$var — scalar / скалярная переменная
 
-@arr — массив
+@arr — array / массив
 
-%hash — хеш
+%hash — hash / ххеш
 ```
 
-Переменные создаются при первом присваивании:
+* Variables are created on first assignment:
+* Переменные создаются при первом присваивании:
 
 ```oyster
 $x = 42
@@ -204,8 +180,9 @@ $x = 42
 %config = (debug => 1)
 ```
 
-### Константы
-Именованные константы подставляются на этапе компиляции:
+### Constants / Константы
+* Named constants are substituted at compile time:
+* Именованные константы подставляются на этапе компиляции:
 
 ```oyster
 &PI = 3.14159
@@ -215,26 +192,27 @@ $x = 42
 $circumference = 2 * &PI * $radius
 ```
 
-Константы из внешних модулей доступны через префикс:
+* External module constants via prefix:
+* Константы из внешних модулей доступны через префикс:
 
 ```oyster
 use "math" as M
 $area = &M.PI * $radius * $radius
 ```
 
-### Операторы
-#### Арифметические
-* \+    # Сложение
+### Operators / Операторы
+#### Arithmetic / Арифметические
+* \+    # Сложение/конкатенация строк
 * \-    # Вычитание
 * \*    # Умножение
 * /     # Деление
 * %     # Остаток от деления
-* ^     # Возведение в степень
-* \-    # (унарный) Отрицание
+* ^     # (power/степень) Возведение в степень
+* \-    # (unary/унарный) Отрицание
 * \++   # Инкремент
 * \--   # Декремент
 
-#### Сравнения
+#### Comparison / Сравнения
 * ==    # Равно
 * !=    # Не равно
 * \<    # Меньше
@@ -242,7 +220,7 @@ $area = &M.PI * $radius * $radius
 * \<=   # Меньше или равно
 * \>=   # Больше или равно
 
-#### Логические
+#### Logical / Логические
 * and   # Логическое И
 * or    # Логическое ИЛИ
 * not   # Логическое НЕ
@@ -255,7 +233,7 @@ $area = &M.PI * $radius * $radius
 * \<<   # Сдвиг влево
 * \>>   #Сдвиг вправо
 
-#### Условные операторы
+#### Control Flow / Управляющие конструкции
 
 if / elseif / else:
 
@@ -271,40 +249,43 @@ if ($x > 10) {
 }
 ```
 
-#### Тернарный оператор
+#### Ternary / Тернарный оператор
 ```oyster
 $max = ($a > $b) ? $a : $b
 ```
 
-#### Циклы
+#### Loops / Циклы
+
 while:
 ```oyster
+$i = 0
 while ($i < 10) {
     print($i)
-    $i = $i + 10
+    inc($i)
 }
 ```
 
 for (C-style):
 ```oyster
-for ($i = 0; $i < 100; $i = $i + 1) {
+for ($i = 0; $i < 10; $i = $i + 1) {
     print($i)
 }
 ```
 
-for (in-style):
+for (in-style / по коллекции):
 ```oyster
+@array = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 for $item in @array {
     print($item)
 }
 ```
 
-#### Управление циклом
-* last      # Выход из цикла
-* next      # Следующая итерация
-* redo      # Повтор текущей итерации
+#### Loop Control / Управление циклом
+* last      # exit loop / выход из цикла
+* next      # next iteration / следующая итерация
+* redo      # repeat current iteration / повтор текущей итерации
 
-Метки для вложенных циклов:
+Labels for nested loops / Метки для вложенных циклов:
 ```oyster
 OUTER: while ($i < 10) {
     INNER: for $j in @arr {
@@ -314,8 +295,8 @@ OUTER: while ($i < 10) {
 }
 ```
 
-### Функции
-#### Пользовательские функции
+### Functions / Функции
+#### User-defined / Пользовательские
 
 Определение функции:
 
@@ -327,28 +308,29 @@ fun add($a, $b) {
 $result = add(10, 20)
 ```
 
-Вместо разделителя аргументов в вызове функци "," может использоваться пробел " ":
+* Space can be used as argument separator instead of comma:
+* Пробел можно использовать вместо запятой:
+
 ```oyster
 $result = add(10 20)
-```
 
-Экспорт функций из модуля:
-```oyster
-# В модуле:
+
+# Export from modules / Экспорт функций из модуля:
+
+# In module / В модуле:
 fun helper($x) {
     return $x * 2
 }
 
 export helper
-```
 
-В основном файле:
-```oyster
+# In main file / В основном файле:
+
 use "mymodule" as M
 print(M.helper(5))
 ```
 
-Методные вызовы:
+Method calls / Методные вызовы:
 ```oyster
 $x = $a.abs()          # abs($a)
 $y = "hello".length()  # length("hello")
@@ -359,20 +341,20 @@ $x.inc()               # инкремент
 $x.dec()               # декремент
 ```
 
-Цепочки методов:
+Method chains / Цепочки методов:
 ```oyster
 $result = $a.abs().sqrt().int()
 ```
 
 
-#### Встроенные функции
+#### Built-in Functions / Встроенные функции
 
 ##### Печать
 ```oyster
 print("Hello, World!")
 ```
 
-##### Математические
+##### Math / Математические
 * abs(x)                # Абсолютное значение
 * sign(x)               # Знак числа (-1, 0, 1)
 * inv(x)                # Инверсия знака
@@ -385,67 +367,73 @@ print("Hello, World!")
 * inc($x)               # Инкремент переменной
 * dec($x)               # Декремент переменной
 
-##### Строковые
+##### String / Строковые
 * len(s)                    # Длина строки
 * index(s, sub, pos)        # Поиск подстроки
 * rindex(s, sub, pos)       # Поиск подстроки справа
 * substr(s, off, len, repl) # Извлечение/замена подстроки
 * chomp(s)                  # Убрать \n в конце
 * chop(s)                   # Убрать последний символ
-* lc(s)                     # Нижний регистр
-* uc(s)                     # Верхний регистр
-* lcfirst(s)                # Первый символ в нижний регистр
-* ucfirst(s)                # Первый символ в верхний регистр
+* lc(s)                     # Нижний регистр - только ASCII
+* uc(s)                     # Верхний регистр - только ASCII
+* lcfirst(s)                # Первый символ в нижний регистр - только ASCII
+* ucfirst(s)                # Первый символ в верхний регистр - только ASCII
 * split(pat, s)             # Разбить строку в массив
 * join(sep, arr)            # Собрать массив в строку
 * chr(n)                    # Код символа → символ
 * ord(c)                    # Символ → код символа
 * strcmp(s1, s2)            # Сравнение строк
 
-##### Файловые
-* fopen(name, mode)     # Открыть файл
-* fclose(fh)            # Закрыть файл
-* freadline(fh)         # Прочитать строку
-* fread(fh, len)        # Прочитать len байт
-* fprint(fh, data)      # Записать в файл
-
-##### Для строк, массивов и хешей
+##### Array/Hash/String / Для строк, массивов и хешей
 * len(@arr)	            # Длина
 * clone(@x)             # Клонировать
 * deallocate(@x)	      # Освободить память
 
-##### Для строк и массивов
+##### Array/String / Для строк и массивов
 * get8/16/32/64(var, index)         # Чтение байт из ByteArray
 * set8/16/32/64(var, index, value)  # Запись байт в ByteArray
 
-##### Для массивов
+##### Array / Для массивов
 * revers(@arr)	        # Перевернуть массив
 * sort(@arr)	          # Отсортировать массив
-* hvalues(%h)           # Массив значений хеша - ссылка
-* hkeys(%h)             # Массив ключей хеша - ссылка
 
-
-##### Для хешей
+##### Hash / Для хешей
 * exists(%hash["key"])          # Проверка существования ключа
 * haskeys(%h)                   # Проверка наличия ключей. Отсутствие - признак лёгкого хеша
 * setkey(%h, old_key, new_key)  # Изменить ключ
 * getkey(%h, index)             # Получить ключ по индексу
 * hadd(%h, value, key?)         # Добавить элемент в хеш
 * hdel(%h)                      # Удалить последний элемент хеша
+* hvalues(%h)                   # Массив значений хеша - ссылка
+* hkeys(%h)                     # Массив ключей хеша - ссылка
 
-##### Для работы с undef
+##### Undef
 * undef(x)              # Проверка: 1 если x — undef
 * ifundef(x, default)   # x если не undef, иначе default
 
+##### File / Файловые
+* fopen(name, mode)         # Открыть файл
+* fclose(fh)                # Закрыть файл
+* freadline(fh)             # Прочитать строку
+* fread(fh, len)            # Прочитать len байт
+* fprint(fh, data)          # Записать в файл
+* fseek(fh, offset, whence) # Позиционирование (whence: 0=начало, 1=текущая, 2=конец)
+* ftell(fh)                 # Текущая позиция
+* feof(fh)                  # Проверка конца файла
+* sysread(fh, len)          # Системное чтение (аналогично fread)
+* syswrite(fh, data)        # Системная запись (аналогично fprint)
+* frename(old, new)         # Переименовать файл
+* funlink(file)             # Удалить файл
 
-### Постфиксная запись выражений
+
+
+### Postfix Notation / Постфиксная запись выражений
 ```oyster
 $c = postfix{ $a $b + 2.0 / }
-# Эквивалентно: $c = ($a + $b) / 2.0
+# Equivalent / Эквивалентно: $c = ($a + $b) / 2.0
 ```
 
-
-### Модули
+### Modules / Модули
 
 Подключение модуля:
 ```oyster
@@ -462,14 +450,11 @@ print(M.myfunc(42))
 $x = &M.PI * 2
 ```
 
-Модули компилируются каскадно: при компиляции основного файла все зависимости находятся и компилируются автоматически.
-
-Режим -e (Experimental extensions)
-Расширенный режим добавляет:
-
+* Modules are compiled cascadingly: when compiling the main file, all dependencies are found and compiled automatically.
+* Модули компилируются каскадно: при компиляции основного файла все зависимости находятся и компилируются автоматически.
 
 ### Примеры программ
-#### Факториал
+#### Factorial / Факториал
 ```oyster
 fun factorial($n) {
     if ($n <= 1) {
@@ -481,7 +466,7 @@ fun factorial($n) {
 print(factorial(10))
 ```
 
-#### Сумма элементов массива
+#### Sum of array elements / Сумма элементов массива
 ```oyster
 @arr = (1, 2, 3, 4, 5)
 $sum = 0
@@ -491,7 +476,7 @@ for $item in @arr {
 print($sum)
 ```
 
-#### Чтение файла
+#### Read file / Чтение файла
 ```oyster
 $fh = fopen("data.txt" "r")
 while (!feof($fh)) {
@@ -501,7 +486,39 @@ while (!feof($fh)) {
 fclose($fh)
 ```
 
+## Building from Source / Сборка из исходников
+
+`make`  
+`make test`  
+`make install`  
+`make clean`
+
+## Dependencies / Зависимости
+
+**Ubuntu/Debian:**  
+`sudo apt install build-essential libpcre2-dev`
+
+**Fedora/RHEL:**  
+`sudo dnf install gcc make pcre2-devel`
+
+## Author / Автор
+
+**Daniil Kranchev**  
+GitHub: [@denrav2019](https://github.com/denrav2019)  
+Email: nnikus2017@gmail.com
+
+## License / Лицензия
+
+MIT License - see the LICENSE file for details.
+
+## Acknowledgments / Благодарности
+
+- Perl - or inspiration / за вдохновение
+- Lua - for VM design concepts / за концепции дизайна VM
+- The open source community / сообществу открытого ПО
+
 ## История релизов Oyster
+
 ### Oyster v0.4.3 — Завершение функционала файловых функций и строковых функций с поддержкой Unicode
 
 Новое:
@@ -520,31 +537,6 @@ fclose($fh)
 
 ✅ Файловые: feof, ftell, fseek, sysread, syswrite, frename, funlink
 
-Все 12 файловых функций:
-
-fopen ✅
-
-fclose ✅
-
-freadline ✅
-
-fread ✅
-
-fprint ✅
-
-sysread ✅
-
-syswrite ✅
-
-frename ✅
-
-funlink ✅
-
-fseek ✅
-
-ftell ✅
-
-feof ✅
 
 ### Oyster v0.4.2 — Расширенный функционал в массиве и хеше
 
